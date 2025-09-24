@@ -1,0 +1,28 @@
+{
+    "APPInfo": {
+        "File Version": "0x1",
+        "Packet Checksum Type": "0x0",
+        "Product Id": "01020304"
+    },
+    "commands": [
+        {
+            "commandSet": [
+                {
+                    "msg": "Command Id : 0x37 Send Data, used to send 16 bytes of data with each command repeated 32 times ",
+                    "cmdId": "0x37",
+                    "dataLength": "0x10",
+                    "repeat": "0x20"
+                },
+                {
+                    "msg": "Command Id : 0x49 Program Data, used to send address, checksum of data for prgramming a memory row. ",
+                    "cmdId": "0x49",
+                    "dataLength": "0x08"
+                }
+            ],
+            "dataFile": "build/app_combined.hex",
+            "flashRowLength": "0x200",
+            "repeat": "EoF",
+            "timeoutMS": "0x600"
+        }
+    ]
+}
