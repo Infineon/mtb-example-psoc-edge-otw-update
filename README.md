@@ -14,7 +14,7 @@ Extended boot launches the Edge Protect bootloader present in RRAM from a fixed 
 
 [View this README on GitHub.](https://github.com/Infineon/mtb-example-psoc-edge-otw-update)
 
-[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzk0ODgiLCJTcGVjIE51bWJlciI6IjAwMi0zOTQ4OCIsIkRvYyBUaXRsZSI6IlBTT0MmdHJhZGU7IEVkZ2UgTUNVOiBPVFcoT3Zlci10aGUtV2lyZSkgRGV2aWNlIEZpcm13YXJlIFVwZGF0ZSIsInJpZCI6Im1hbmFuIGphaW4iLCJEb2MgdmVyc2lvbiI6IjIuMC4wIiwiRG9jIExhbmd1YWdlIjoiRW5nbGlzaCIsIkRvYyBEaXZpc2lvbiI6Ik1DRCIsIkRvYyBCVSI6IklDVyIsIkRvYyBGYW1pbHkiOiJQU09DIn0=)
+[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzk0ODgiLCJTcGVjIE51bWJlciI6IjAwMi0zOTQ4OCIsIkRvYyBUaXRsZSI6IlBTT0MmdHJhZGU7IEVkZ2UgTUNVOiBPVFcoT3Zlci10aGUtV2lyZSkgRGV2aWNlIEZpcm13YXJlIFVwZGF0ZSIsInJpZCI6Im1hbmFuIGphaW4iLCJEb2MgdmVyc2lvbiI6IjIuMC4xIiwiRG9jIExhbmd1YWdlIjoiRW5nbGlzaCIsIkRvYyBEaXZpc2lvbiI6Ik1DRCIsIkRvYyBCVSI6IklDVyIsIkRvYyBGYW1pbHkiOiJQU09DIn0=)
 
 See the [Design and implementation](docs/design_and_implementation.md) for the functional description of this example.
 
@@ -240,6 +240,7 @@ Document title: *CE239488* – *PSOC&trade; Edge MCU: OTW Device Firmware Update
  ------- | ---------------------
  1.x.0   | New code example <br> Early access release
  2.0.0   | GitHub release
+ 2.0.1   | Updated .gitignore file
 <br>
 
 
