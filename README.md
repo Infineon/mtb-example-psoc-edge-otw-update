@@ -6,7 +6,7 @@ The host (typically a PC) running the DFU Host Tool establishes a connection wit
 
 > **Note:** This CE only demonstrates I2C and USB interfaces for DFU. See other DFU code examples for SPI and UART interfaces.
 
-This example also illustrates switching between I2C, USB-CDC, and USB-HID interfaces while the application is running without needing the device to be power cycled or programming recompiled binary. For example, on reset, this example selects I2C as the default interface for DFU. If you wish to change the interface to USB, simply press a user button (USER BTN1 - SW2) on PSOC&trade; Edge Evaluation kit.
+This example also illustrates switching between I2C, USB-CDC, and USB-HID interfaces while the application is running without needing the device to be power cycled or programming recompiled binary. For example, on reset, this example selects I2C as the default interface for DFU. If you wish to change the interface to USB, simply press a user button (USER BTN1 - SW2) on PSOC™ Edge Evaluation kit and (USER BTN1 - SW1)  on PSOC™ Edge AI kit.
 
 This code example has a three project structure: CM33 secure, CM33 non-secure, and CM55 projects. All three projects are programmed to the external QSPI flash and executed in Execute in Place (XIP) mode. It also requires you to add the EdgeProtect bootloader project (*proj_bootloader*). It needs to be programmed on the device RRAM and is executed in Execute in Place (XIP) mode. The EdgeProtect bootloader is responsible for validation and update of the images downloaded to the device.
 
@@ -14,7 +14,7 @@ Extended boot launches the Edge Protect bootloader present in RRAM from a fixed 
 
 [View this README on GitHub.](https://github.com/Infineon/mtb-example-psoc-edge-otw-update)
 
-[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzk0ODgiLCJTcGVjIE51bWJlciI6IjAwMi0zOTQ4OCIsIkRvYyBUaXRsZSI6IlBTT0MmdHJhZGU7IEVkZ2UgTUNVOiBPVFcoT3Zlci10aGUtV2lyZSkgRGV2aWNlIEZpcm13YXJlIFVwZGF0ZSIsInJpZCI6Im1hbmFuIGphaW4iLCJEb2MgdmVyc2lvbiI6IjIuMC4xIiwiRG9jIExhbmd1YWdlIjoiRW5nbGlzaCIsIkRvYyBEaXZpc2lvbiI6Ik1DRCIsIkRvYyBCVSI6IklDVyIsIkRvYyBGYW1pbHkiOiJQU09DIn0=)
+[Provide feedback on this code example.](https://yourvoice.infineon.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzk0ODgiLCJTcGVjIE51bWJlciI6IjAwMi0zOTQ4OCIsIkRvYyBUaXRsZSI6IlBTT0MmdHJhZGU7IEVkZ2UgTUNVOiBPVFcoT3Zlci10aGUtV2lyZSkgRGV2aWNlIEZpcm13YXJlIFVwZGF0ZSIsInJpZCI6Im1hbmFuLmphaW5AaW5maW5lb24uY29tIiwiRG9jIHZlcnNpb24iOiIyLjEuMCIsIkRvYyBMYW5ndWFnZSI6IkVuZ2xpc2giLCJEb2MgRGl2aXNpb24iOiJNQ0QiLCJEb2MgQlUiOiJJQ1ciLCJEb2MgRmFtaWx5IjoiUFNPQyJ9)
 
 See the [Design and implementation](docs/design_and_implementation.md) for the functional description of this example.
 
@@ -39,7 +39,7 @@ See the [Design and implementation](docs/design_and_implementation.md) for the f
 
 - [PSOC&trade; Edge E84 Evaluation Kit](https://www.infineon.com/KIT_PSE84_EVAL) (`KIT_PSE84_EVAL_EPC2`) – Default value of `TARGET`
 - [PSOC&trade; Edge E84 Evaluation Kit](https://www.infineon.com/KIT_PSE84_EVAL) (`KIT_PSE84_EVAL_EPC4`)
-
+- [PSOC&trade; Edge E84 AI Kit](https://www.infineon.com/KIT_PSE84_AI) (`KIT_PSE84_AI`)
 
 ## Hardware setup
 
@@ -49,21 +49,34 @@ This example uses the board's default configuration. See the kit user guide to e
     - BOOT SW Pin (P17.6) should be in LOW/OFF position
     - J20 and J21 should be in tristate/not connected (NC) position
 
+For the `KIT_PSE84_AI` kit, either remove the R188 resistor and populate the R187 resistor to pull the boot pin to LOW, or follow the provisioning method in the [Provisioning method](#provisioning-method) section to avoid hardware rework.
+
+> **Note:** To evaluate the other supported code examples that boot from QSPI flash, the resistors should be reverted to default settings.
+
 2. Make the following connections for the DFU Transport interface selected:
     > **Note:** This Code example uses I2C as the default DFU transport. Make sure you make connection accordingly, unless changed during build time or plan to change at runtime.
+
+    Pin Function | Pin on PSOC&trade; Edge E84 Evaluation Kit | Pin on PSOC&trade; Edge E84 AI Kit
+    ------------ | ----- | -----
+    SERIAL_INT0  | J14.1 | J5.5
+    SERIAL_INT1  | J14.2 | J5.4
+    SERIAL_INT2  | J14.3 | J5.3
+    SERIAL_INT3  | J14.4 | J5.2
+    GND          | J14.5 | J5.6
+    VDD (1.8 V)  | J23.1 | J5.1
 
     <details><summary><b> I2C Transport Setup </b></summary>
 
     1. To use I2C transport, make the following Pin connections
-        - Connect the SERIAL_INT2 Pin on EVK to SDA (Pin 2) of MiniProg4
-        - Connect the SERIAL_INT3 Pin on EVK to SCL (Pin 4) of MiniProg4
+        - Connect the SERIAL_INT2 Pin on PSOC&trade; Edge E84 Evaluation Kit or PSOC&trade; Edge E84 AI Kit to SDA (Pin 2) of MiniProg4
+        - Connect the SERIAL_INT3 Pin on PSOC&trade; Edge E84 Evaluation Kit or PSOC&trade; Edge E84 AI Kit to SCL (Pin 4) of MiniProg4
         - Make the required VDD (1.8 V) and GND connections
 
         **Figure 1. Sample I2C interface connection**
 
         ![](images/serial-interface.png)
 
-    2. Connect KitProg3 (on-board EVK) to the PC
+    2. Connect KitProg3 (on-board PSOC&trade; Edge E84 Evaluation Kit or PSOC&trade; Edge E84 AI Kit) to the PC
 
         While both KitProg3 and MiniProg4 (external) has to be connected to the PC, do not connect the MiniProg4 USB to the host PC just yet – until you are instructed to do so later in this README.
 
@@ -94,6 +107,15 @@ Install a terminal emulator if you do not have one. Instructions in this documen
 
 This example requires no additional software or tools.
 
+## Provisioning method
+
+To avoid hardware rework on the `KIT_PSE84_AI` kit, customize the generated OEM policy JSON file to ignore the boot pin status while booting.
+
+While following the provisioning steps, once the OEM key pair is generated, set the 'oem_alt_boot' to "false" in the *policy/policy_oem_provisioning.json* file in the project before provisioning the kit.
+
+For detailed instructions to provision the kit, see the *Development flow* section in the [AN237849 – Getting started with PSOC&trade; Edge security](https://www.infineon.com/AN237849).
+
+> **Note:** To evaluate other code examples that boot from QSPI flash, reprovision the kit with default settings by setting 'oem_alt_boot' to "true" in the *policy/policy_oem_provisioning.json* file in the project before reprovisioning the kit.
 
 ## Operation
 
@@ -241,6 +263,7 @@ Document title: *CE239488* – *PSOC&trade; Edge MCU: OTW Device Firmware Update
  1.x.0   | New code example <br> Early access release
  2.0.0   | GitHub release
  2.0.1   | Updated .gitignore file
+ 2.1.0   | Added support for KIT_PSE84_AI
 <br>
 
 
