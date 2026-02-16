@@ -14,14 +14,14 @@ Extended boot launches the Edge Protect bootloader present in RRAM from a fixed 
 
 [View this README on GitHub.](https://github.com/Infineon/mtb-example-psoc-edge-otw-update)
 
-[Provide feedback on this code example.](https://yourvoice.infineon.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzk0ODgiLCJTcGVjIE51bWJlciI6IjAwMi0zOTQ4OCIsIkRvYyBUaXRsZSI6IlBTT0MmdHJhZGU7IEVkZ2UgTUNVOiBPVFcoT3Zlci10aGUtV2lyZSkgRGV2aWNlIEZpcm13YXJlIFVwZGF0ZSIsInJpZCI6Im1hbmFuLmphaW5AaW5maW5lb24uY29tIiwiRG9jIHZlcnNpb24iOiIyLjEuMCIsIkRvYyBMYW5ndWFnZSI6IkVuZ2xpc2giLCJEb2MgRGl2aXNpb24iOiJNQ0QiLCJEb2MgQlUiOiJJQ1ciLCJEb2MgRmFtaWx5IjoiUFNPQyJ9)
+[Provide feedback on this code example.](https://yourvoice.infineon.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzk0ODgiLCJTcGVjIE51bWJlciI6IjAwMi0zOTQ4OCIsIkRvYyBUaXRsZSI6IlBTT0MmdHJhZGU7IEVkZ2UgTUNVOiBPVFcoT3Zlci10aGUtV2lyZSkgRGV2aWNlIEZpcm13YXJlIFVwZGF0ZSIsInJpZCI6Im1hbmFuLmphaW5AaW5maW5lb24uY29tIiwiRG9jIHZlcnNpb24iOiIyLjIuMCIsIkRvYyBMYW5ndWFnZSI6IkVuZ2xpc2giLCJEb2MgRGl2aXNpb24iOiJNQ0QiLCJEb2MgQlUiOiJJQ1ciLCJEb2MgRmFtaWx5IjoiUFNPQyJ9)
 
 See the [Design and implementation](docs/design_and_implementation.md) for the functional description of this example.
 
 
 ## Requirements
 
-- [ModusToolbox&trade;](https://www.infineon.com/modustoolbox) v3.6 or later (tested with v3.6)
+- [ModusToolbox&trade;](https://www.infineon.com/modustoolbox) v3.7 or later (tested with v3.7)
 - Board support package (BSP) minimum required version: 1.0.0
 - Programming language: C
 - Associated parts: All [PSOC&trade; Edge MCU](https://www.infineon.com/products/microcontroller/32-bit-psoc-arm-cortex/32-bit-psoc-edge-arm) parts
@@ -264,6 +264,7 @@ Document title: *CE239488* – *PSOC&trade; Edge MCU: OTW Device Firmware Update
  2.0.0   | GitHub release
  2.0.1   | Updated .gitignore file
  2.1.0   | Added support for KIT_PSE84_AI
+ 2.2.0   | Updated design files to fix ModusToolbox&trade; v3.7 build warnings
 <br>
 
 

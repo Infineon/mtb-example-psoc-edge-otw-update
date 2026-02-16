@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration app="BACKEND" formatVersion="15" lastSavedWith="Configurator Backend" lastSavedWithVersion="3.60.0" toolsPackage="ModusToolbox 3.6.0" xmlns="http://cypress.com/xsd/cydesignfile_v6">
+<Configuration app="BACKEND" formatVersion="15" lastSavedWith="Configurator Backend" lastSavedWithVersion="3.70.0" toolsPackage="ModusToolbox 3.7.0" xmlns="http://cypress.com/xsd/cydesignfile_v7">
     <Devices>
         <Device mpn="PSE846GPS4DBZC4A">
             <BlockConfig>
@@ -1280,7 +1280,7 @@
                         <Param id="extended_drive_sel" value="false"/>
                         <Param id="inFlash" value="true"/>
                         <Param id="initialState" value="1"/>
-                        <Param id="isrTrigger" value="CY_GPIO_INTR_DISABLE"/>
+                        <Param id="isrTrigger" value="CY_GPIO_INTR_RISING"/>
                         <Param id="nonSec" value="1"/>
                         <Param id="pullUpRes" value="CY_GPIO_PULLUP_RES_DISABLE"/>
                         <Param id="sioOutputBuffer" value="true"/>
@@ -2035,6 +2035,9 @@
                         <Param id="privileged1" value="false"/>
                         <Param id="privileged2" value="false"/>
                         <Param id="privileged3" value="false"/>
+                        <Param id="shareable1" value="false"/>
+                        <Param id="shareable2" value="false"/>
+                        <Param id="shareable3" value="false"/>
                         <Param id="size1" value="0x00003000"/>
                         <Param id="size2" value="0x00040000"/>
                         <Param id="size3" value="0x001C4000"/>
@@ -2367,7 +2370,12 @@
                         <Param id="is_receiver_3_used" value="true"/>
                         <Param id="is_receiver_4_used" value="false"/>
                         <Param id="is_receiver_5_used" value="false"/>
-                        <Param id="routeCtl" value="4"/>
+                        <Param id="routeCtl_0_1_int1" value="0"/>
+                        <Param id="routeCtl_0_1_int2" value="1"/>
+                        <Param id="routeCtl_2_3_int1" value="0"/>
+                        <Param id="routeCtl_2_3_int2" value="4"/>
+                        <Param id="routeCtl_4_5_int1" value="0"/>
+                        <Param id="routeCtl_4_5_int2" value="16"/>
                         <Param id="rxDmaTrigger" value="false"/>
                         <Param id="rxFifoTriggerLevel_0" value="10"/>
                         <Param id="rxFifoTriggerLevel_1" value="10"/>
@@ -2405,7 +2413,7 @@
                         <Param id="wordSize_7" value="CY_PDM_PCM_WSIZE_16_BIT"/>
                     </Parameters>
                 </Personality>
-                <Personality template="pclk_v2" version="1.0" instance="E5ESJtxKQgk">
+                <Personality template="pclk_v2" version="1.1" instance="hBhoYlWNg10">
                     <Block location="peri[0].group[1].div_8[0]" locked="true">
                         <Aliases>
                             <Alias value="CYBSP_EZ_I2C_TARGET_CLK_DIV"/>
@@ -2416,18 +2424,18 @@
                         <Param id="startOnReset" value="true"/>
                     </Parameters>
                 </Personality>
-                <Personality template="pclk_v2" version="1.0" instance="-KJIh42hMXA">
+                <Personality template="pclk_v2" version="1.1" instance="zdwKhrVL9Fk">
                     <Block location="peri[0].group[1].div_8[1]" locked="true">
                         <Aliases>
                             <Alias value="CYBSP_SPI_CONTROLLER_CLK_DIV"/>
                         </Aliases>
                     </Block>
                     <Parameters>
-                        <Param id="intDivider" value="6"/>
+                        <Param id="intDivider" value="10"/>
                         <Param id="startOnReset" value="true"/>
                     </Parameters>
                 </Personality>
-                <Personality template="pclk_v2" version="1.0" instance="74FALe490Is">
+                <Personality template="pclk_v2" version="1.1" instance="LySYsgMMhok">
                     <Block location="peri[0].group[1].div_8[2]" locked="true">
                         <Aliases>
                             <Alias value="CYBSP_USB_OS_TIMER_CLK_DIV"/>
@@ -2438,7 +2446,7 @@
                         <Param id="startOnReset" value="true"/>
                     </Parameters>
                 </Personality>
-                <Personality template="pclk_v2" version="1.0" instance="72QnHf3r67A">
+                <Personality template="pclk_v2" version="1.1" instance="mIpNKCZY_r8">
                     <Block location="peri[0].group[1].div_8[3]" locked="true">
                         <Aliases>
                             <Alias value="CYBSP_PWM_DT_CLK_DIV"/>
@@ -2449,7 +2457,7 @@
                         <Param id="startOnReset" value="true"/>
                     </Parameters>
                 </Personality>
-                <Personality template="pclk_v2" version="1.0" instance="SnXZ_ZAruzg">
+                <Personality template="pclk_v2" version="1.1" instance="lWYcASO-ziA">
                     <Block location="peri[0].group[1].div_16[0]" locked="true">
                         <Aliases>
                             <Alias value="CYBSP_I2C_CONTROLLER_CLK_DIV"/>
@@ -2460,7 +2468,7 @@
                         <Param id="startOnReset" value="true"/>
                     </Parameters>
                 </Personality>
-                <Personality template="pclk_v2" version="1.0" instance="r7obuVjoVXM">
+                <Personality template="pclk_v2" version="1.1" instance="b7UK1A4vZF0">
                     <Block location="peri[0].group[1].div_16[1]" locked="true">
                         <Aliases>
                             <Alias value="CYBSP_DEBUG_UART_CLK_DIV"/>
@@ -2471,7 +2479,7 @@
                         <Param id="startOnReset" value="true"/>
                     </Parameters>
                 </Personality>
-                <Personality template="pclk_v2" version="1.0" instance="h1jyRfliPco">
+                <Personality template="pclk_v2" version="1.1" instance="secczZ5vmfU">
                     <Block location="peri[0].group[1].div_16[2]" locked="true">
                         <Aliases>
                             <Alias value="CYBSP_GENERAL_PURPOSE_TIMER_CLK_DIV"/>
@@ -2482,7 +2490,7 @@
                         <Param id="startOnReset" value="true"/>
                     </Parameters>
                 </Personality>
-                <Personality template="pclk_v2" version="1.0" instance="38UMBOxuje4">
+                <Personality template="pclk_v2" version="1.1" instance="l-uRvHulndE">
                     <Block location="peri[0].group[1].div_16[3]" locked="true">
                         <Aliases>
                             <Alias value="CYBSP_PWM_LED_CTRL_CLK_DIV"/>
@@ -2493,7 +2501,7 @@
                         <Param id="startOnReset" value="true"/>
                     </Parameters>
                 </Personality>
-                <Personality template="pclk_v2" version="1.0" instance="WOOQVPnOl_Y">
+                <Personality template="pclk_v2" version="1.1" instance="3BF04lsSfO4">
                     <Block location="peri[0].group[1].div_16_5[0]" locked="true">
                         <Aliases>
                             <Alias value="CYBSP_BT_UART_CLK_DIV"/>
@@ -2505,7 +2513,7 @@
                         <Param id="startOnReset" value="true"/>
                     </Parameters>
                 </Personality>
-                <Personality template="pclk_v2" version="1.0" instance="vy6xFOXZU08">
+                <Personality template="pclk_v2" version="1.1" instance="lKBPk_QtBUo">
                     <Block location="peri[0].group[1].div_16_5[1]" locked="true">
                         <Aliases>
                             <Alias value="CYBSP_SMARTIO_PWM_CLK_DIV"/>
@@ -2517,7 +2525,7 @@
                         <Param id="startOnReset" value="true"/>
                     </Parameters>
                 </Personality>
-                <Personality template="pclk_v2" version="1.0" instance="5zaI3-vQKc0">
+                <Personality template="pclk_v2" version="1.1" instance="fQE1p-NPevA">
                     <Block location="peri[0].group[1].div_24_5[0]" locked="true">
                         <Aliases>
                             <Alias value="CYBSP_SMART_IO_CLK_DIV"/>
@@ -2529,7 +2537,7 @@
                         <Param id="startOnReset" value="true"/>
                     </Parameters>
                 </Personality>
-                <Personality template="pclk_v2" version="1.0" instance="ZAMc4kFrGAg">
+                <Personality template="pclk_v2" version="1.1" instance="kJKDZvjcIcI">
                     <Block location="peri[0].group[7].div_16_5[0]" locked="true">
                         <Aliases>
                             <Alias value="CYBSP_TRACE_CLK_DIV"/>
@@ -2541,14 +2549,14 @@
                         <Param id="startOnReset" value="true"/>
                     </Parameters>
                 </Personality>
-                <Personality template="pclk_v2" version="1.0" instance="GoDepYXcvA4">
+                <Personality template="pclk_v2" version="1.1" instance="aMtAps9YG4Q">
                     <Block location="peri[0].group[8].div_16[0]" locked="true"/>
                     <Parameters>
                         <Param id="intDivider" value="3"/>
                         <Param id="startOnReset" value="true"/>
                     </Parameters>
                 </Personality>
-                <Personality template="pclk_v2" version="1.0" instance="1uBmbxjOkWE">
+                <Personality template="pclk_v2" version="1.1" instance="P03qqjMub2w">
                     <Block location="peri[0].group[9].div_8[0]" locked="true">
                         <Aliases>
                             <Alias value="CYBSP_I3C_CONTROLLER_CLK_DIV"/>
@@ -2559,19 +2567,17 @@
                         <Param id="startOnReset" value="true"/>
                     </Parameters>
                 </Personality>
-                <Personality template="mmio" version="1.0" instance="fZVxHvxlSOk">
+                <Personality template="mmio" version="1.1" instance="5iZ6pmilKRI">
                     <Block location="peri[0].mmio[0]" locked="true"/>
                     <Parameters>
                         <Param id="divider2" value="2"/>
-                        <Param id="dividerEnabled0" value="false"/>
                         <Param id="dividerEnabled1" value="false"/>
                         <Param id="dividerEnabled2" value="true"/>
                         <Param id="dividerEnabled3" value="false"/>
-                        <Param id="dividerEnabled4" value="false"/>
                         <Param id="dividerEnabled5" value="false"/>
                     </Parameters>
                 </Personality>
-                <Personality template="pclk_v2" version="1.0" instance="XwpX8Wr_koo">
+                <Personality template="pclk_v2" version="1.1" instance="mjRXFQ5eiP0">
                     <Block location="peri[1].group[1].div_16_5[0]" locked="true">
                         <Aliases>
                             <Alias value="CYBSP_TDM_CONTROLLER_0_CLK_DIV"/>
@@ -2583,7 +2589,7 @@
                         <Param id="startOnReset" value="true"/>
                     </Parameters>
                 </Personality>
-                <Personality template="pclk_v2" version="1.0" instance="1Pj3A_gzNQ4">
+                <Personality template="pclk_v2" version="1.1" instance="mt-AZ6VUO84">
                     <Block location="peri[1].group[1].div_16_5[1]" locked="true">
                         <Aliases>
                             <Alias value="CYBSP_PDM_CLK_DIV"/>
@@ -2595,7 +2601,7 @@
                         <Param id="startOnReset" value="true"/>
                     </Parameters>
                 </Personality>
-                <Personality template="pclk_v2" version="1.0" instance="d9AiDHtoEjA">
+                <Personality template="pclk_v2" version="1.1" instance="LyOgDv9OCR8">
                     <Block location="peri[1].group[2].div_8[0]" locked="true">
                         <Aliases>
                             <Alias value="CYBSP_SDHC_0_CLK_DIV"/>
@@ -2606,7 +2612,7 @@
                         <Param id="startOnReset" value="true"/>
                     </Parameters>
                 </Personality>
-                <Personality template="pclk_v2" version="1.0" instance="n5v5kTyDdg0">
+                <Personality template="pclk_v2" version="1.1" instance="PmT3rJ7HMMg">
                     <Block location="peri[1].group[3].div_8[0]" locked="true">
                         <Aliases>
                             <Alias value="CYBSP_SDHC_1_CLK_DIV"/>
@@ -2617,16 +2623,13 @@
                         <Param id="startOnReset" value="true"/>
                     </Parameters>
                 </Personality>
-                <Personality template="mmio" version="1.0" instance="UUwTfYwsYSw">
+                <Personality template="mmio" version="1.1" instance="uA8Xm8DYCqI">
                     <Block location="peri[1].mmio[0]" locked="true"/>
                     <Parameters>
                         <Param id="divider1" value="2"/>
                         <Param id="divider3" value="4"/>
-                        <Param id="dividerEnabled0" value="false"/>
                         <Param id="dividerEnabled1" value="true"/>
-                        <Param id="dividerEnabled2" value="false"/>
                         <Param id="dividerEnabled3" value="true"/>
-                        <Param id="dividerEnabled4" value="false"/>
                     </Parameters>
                 </Personality>
                 <Personality template="i2c" version="4.0" instance="Z-0WSjZHSXQ">
@@ -2830,7 +2833,7 @@
                         <Param id="IntrTxTrigger" value="false"/>
                         <Param id="IntrTxUnderflow" value="false"/>
                         <Param id="ModeUser" value="CY_SCB_SPI_MASTER"/>
-                        <Param id="OvsFactor" value="16"/>
+                        <Param id="OvsFactor" value="10"/>
                         <Param id="Parity" value="CY_SCB_SPI_PARITY_NONE"/>
                         <Param id="RxDataWidth" value="8"/>
                         <Param id="RxTriggerLevel" value="63"/>
@@ -3195,7 +3198,7 @@
                         <Param id="inFlash" value="true"/>
                     </Parameters>
                 </Personality>
-                <Personality template="power_v4" version="1.0" instance="lMGDNnoZghg">
+                <Personality template="power_v4" version="1.1" instance="_kvjbs1NOUM">
                     <Block location="srss[0].power[0]" locked="true"/>
                     <Parameters>
                         <Param id="actPwrMode" value="POWER_PROFILE_HP"/>
@@ -3512,6 +3515,7 @@
                     <Parameters>
                         <Param id="mode" value="Device"/>
                         <Param id="timerEnable" value="true"/>
+                        <Param id="usbCounter#inFlash" value="false"/>
                         <Param id="usbCounter#usbCounter" value="AUTOPLACEDtcpwm[0].group[0].cnt[1]"/>
                     </Parameters>
                     <Personality template="usbCounter" instance="jZetNzFzV3U">
@@ -3520,14 +3524,12 @@
                                 <Alias value="CYBSP_USB_OS_TIMER_COUNTER"/>
                             </Aliases>
                         </Block>
-                        <Parameters>
-                            <Param id="inFlash" value="false"/>
-                        </Parameters>
                     </Personality>
                 </Personality>
                 <Personality template="edgeprotect_bootloader_cfg" version="1.0" instance="qY8ydJa_AJQ">
                     <Block location="vres[0].edgeprotect_bootloader_cfg[0]" locked="true"/>
                     <Parameters>
+                        <Param id="app0_data_encryption_key_path" value="../../../../keys/aes_key_1.bin"/>
                         <Param id="app0_hw_rollback_number" value="2"/>
                         <Param id="app0_hw_rollback_value" value="1"/>
                         <Param id="app0_image_boot_record" value="App_0"/>
@@ -3548,8 +3550,7 @@
                         <Param id="app0_secure_access" value="false"/>
                         <Param id="app0_sig_verify_algo_provisioned" value="ecdsa_p256"/>
                         <Param id="app0_sig_verify_key_id" value="0"/>
-                        <Param id="app0_signature_key_id" value="1"/>
-                        <Param id="app0_signature_priv_key_path" value="../../../../keys/oem_private_key_0.pem"/>
+                        <Param id="app10_data_encryption_key_path" value="../../../../keys/aes_key_11.bin"/>
                         <Param id="app10_hw_rollback_number" value="12"/>
                         <Param id="app10_hw_rollback_value" value="1"/>
                         <Param id="app10_image_boot_record" value="App_10"/>
@@ -3570,8 +3571,7 @@
                         <Param id="app10_secure_access" value="false"/>
                         <Param id="app10_sig_verify_algo_provisioned" value="ecdsa_p256"/>
                         <Param id="app10_sig_verify_key_id" value="0"/>
-                        <Param id="app10_signature_key_id" value="1"/>
-                        <Param id="app10_signature_priv_key_path" value="../../../../keys/oem_private_key_0.pem"/>
+                        <Param id="app11_data_encryption_key_path" value="../../../../keys/aes_key_12.bin"/>
                         <Param id="app11_hw_rollback_number" value="13"/>
                         <Param id="app11_hw_rollback_value" value="1"/>
                         <Param id="app11_image_boot_record" value="App_11"/>
@@ -3592,8 +3592,7 @@
                         <Param id="app11_secure_access" value="false"/>
                         <Param id="app11_sig_verify_algo_provisioned" value="ecdsa_p256"/>
                         <Param id="app11_sig_verify_key_id" value="0"/>
-                        <Param id="app11_signature_key_id" value="1"/>
-                        <Param id="app11_signature_priv_key_path" value="../../../../keys/oem_private_key_0.pem"/>
+                        <Param id="app12_data_encryption_key_path" value="../../../../keys/aes_key_13.bin"/>
                         <Param id="app12_hw_rollback_number" value="14"/>
                         <Param id="app12_hw_rollback_value" value="1"/>
                         <Param id="app12_image_boot_record" value="App_12"/>
@@ -3614,8 +3613,7 @@
                         <Param id="app12_secure_access" value="false"/>
                         <Param id="app12_sig_verify_algo_provisioned" value="ecdsa_p256"/>
                         <Param id="app12_sig_verify_key_id" value="0"/>
-                        <Param id="app12_signature_key_id" value="1"/>
-                        <Param id="app12_signature_priv_key_path" value="../../../../keys/oem_private_key_0.pem"/>
+                        <Param id="app13_data_encryption_key_path" value="../../../../keys/aes_key_14.bin"/>
                         <Param id="app13_hw_rollback_number" value="15"/>
                         <Param id="app13_hw_rollback_value" value="1"/>
                         <Param id="app13_image_boot_record" value="App_13"/>
@@ -3636,8 +3634,7 @@
                         <Param id="app13_secure_access" value="false"/>
                         <Param id="app13_sig_verify_algo_provisioned" value="ecdsa_p256"/>
                         <Param id="app13_sig_verify_key_id" value="0"/>
-                        <Param id="app13_signature_key_id" value="1"/>
-                        <Param id="app13_signature_priv_key_path" value="../../../../keys/oem_private_key_0.pem"/>
+                        <Param id="app14_data_encryption_key_path" value="../../../../keys/aes_key_15.bin"/>
                         <Param id="app14_hw_rollback_number" value="16"/>
                         <Param id="app14_hw_rollback_value" value="1"/>
                         <Param id="app14_image_boot_record" value="App_14"/>
@@ -3658,8 +3655,7 @@
                         <Param id="app14_secure_access" value="false"/>
                         <Param id="app14_sig_verify_algo_provisioned" value="ecdsa_p256"/>
                         <Param id="app14_sig_verify_key_id" value="0"/>
-                        <Param id="app14_signature_key_id" value="1"/>
-                        <Param id="app14_signature_priv_key_path" value="../../../../keys/oem_private_key_0.pem"/>
+                        <Param id="app15_data_encryption_key_path" value="../../../../keys/aes_key_16.bin"/>
                         <Param id="app15_hw_rollback_number" value="17"/>
                         <Param id="app15_hw_rollback_value" value="1"/>
                         <Param id="app15_image_boot_record" value="App_15"/>
@@ -3680,8 +3676,7 @@
                         <Param id="app15_secure_access" value="false"/>
                         <Param id="app15_sig_verify_algo_provisioned" value="ecdsa_p256"/>
                         <Param id="app15_sig_verify_key_id" value="0"/>
-                        <Param id="app15_signature_key_id" value="1"/>
-                        <Param id="app15_signature_priv_key_path" value="../../../../keys/oem_private_key_0.pem"/>
+                        <Param id="app1_data_encryption_key_path" value="../../../../keys/aes_key_2.bin"/>
                         <Param id="app1_hw_rollback_number" value="3"/>
                         <Param id="app1_hw_rollback_value" value="1"/>
                         <Param id="app1_image_boot_record" value="App_1"/>
@@ -3702,8 +3697,7 @@
                         <Param id="app1_secure_access" value="false"/>
                         <Param id="app1_sig_verify_algo_provisioned" value="ecdsa_p256"/>
                         <Param id="app1_sig_verify_key_id" value="0"/>
-                        <Param id="app1_signature_key_id" value="1"/>
-                        <Param id="app1_signature_priv_key_path" value="../../../../keys/oem_private_key_0.pem"/>
+                        <Param id="app2_data_encryption_key_path" value="../../../../keys/aes_key_3.bin"/>
                         <Param id="app2_hw_rollback_number" value="4"/>
                         <Param id="app2_hw_rollback_value" value="1"/>
                         <Param id="app2_image_boot_record" value="App_2"/>
@@ -3724,8 +3718,7 @@
                         <Param id="app2_secure_access" value="false"/>
                         <Param id="app2_sig_verify_algo_provisioned" value="ecdsa_p256"/>
                         <Param id="app2_sig_verify_key_id" value="0"/>
-                        <Param id="app2_signature_key_id" value="1"/>
-                        <Param id="app2_signature_priv_key_path" value="../../../../keys/oem_private_key_0.pem"/>
+                        <Param id="app3_data_encryption_key_path" value="../../../../keys/aes_key_4.bin"/>
                         <Param id="app3_hw_rollback_number" value="5"/>
                         <Param id="app3_hw_rollback_value" value="1"/>
                         <Param id="app3_image_boot_record" value="App_3"/>
@@ -3746,8 +3739,7 @@
                         <Param id="app3_secure_access" value="false"/>
                         <Param id="app3_sig_verify_algo_provisioned" value="ecdsa_p256"/>
                         <Param id="app3_sig_verify_key_id" value="0"/>
-                        <Param id="app3_signature_key_id" value="1"/>
-                        <Param id="app3_signature_priv_key_path" value="../../../../keys/oem_private_key_0.pem"/>
+                        <Param id="app4_data_encryption_key_path" value="../../../../keys/aes_key_5.bin"/>
                         <Param id="app4_hw_rollback_number" value="6"/>
                         <Param id="app4_hw_rollback_value" value="1"/>
                         <Param id="app4_image_boot_record" value="App_4"/>
@@ -3768,8 +3760,7 @@
                         <Param id="app4_secure_access" value="false"/>
                         <Param id="app4_sig_verify_algo_provisioned" value="ecdsa_p256"/>
                         <Param id="app4_sig_verify_key_id" value="0"/>
-                        <Param id="app4_signature_key_id" value="1"/>
-                        <Param id="app4_signature_priv_key_path" value="../../../../keys/oem_private_key_0.pem"/>
+                        <Param id="app5_data_encryption_key_path" value="../../../../keys/aes_key_6.bin"/>
                         <Param id="app5_hw_rollback_number" value="7"/>
                         <Param id="app5_hw_rollback_value" value="1"/>
                         <Param id="app5_image_boot_record" value="App_5"/>
@@ -3790,8 +3781,7 @@
                         <Param id="app5_secure_access" value="false"/>
                         <Param id="app5_sig_verify_algo_provisioned" value="ecdsa_p256"/>
                         <Param id="app5_sig_verify_key_id" value="0"/>
-                        <Param id="app5_signature_key_id" value="1"/>
-                        <Param id="app5_signature_priv_key_path" value="../../../../keys/oem_private_key_0.pem"/>
+                        <Param id="app6_data_encryption_key_path" value="../../../../keys/aes_key_7.bin"/>
                         <Param id="app6_hw_rollback_number" value="8"/>
                         <Param id="app6_hw_rollback_value" value="1"/>
                         <Param id="app6_image_boot_record" value="App_6"/>
@@ -3812,8 +3802,7 @@
                         <Param id="app6_secure_access" value="false"/>
                         <Param id="app6_sig_verify_algo_provisioned" value="ecdsa_p256"/>
                         <Param id="app6_sig_verify_key_id" value="0"/>
-                        <Param id="app6_signature_key_id" value="1"/>
-                        <Param id="app6_signature_priv_key_path" value="../../../../keys/oem_private_key_0.pem"/>
+                        <Param id="app7_data_encryption_key_path" value="../../../../keys/aes_key_8.bin"/>
                         <Param id="app7_hw_rollback_number" value="9"/>
                         <Param id="app7_hw_rollback_value" value="1"/>
                         <Param id="app7_image_boot_record" value="App_7"/>
@@ -3834,8 +3823,7 @@
                         <Param id="app7_secure_access" value="false"/>
                         <Param id="app7_sig_verify_algo_provisioned" value="ecdsa_p256"/>
                         <Param id="app7_sig_verify_key_id" value="0"/>
-                        <Param id="app7_signature_key_id" value="1"/>
-                        <Param id="app7_signature_priv_key_path" value="../../../../keys/oem_private_key_0.pem"/>
+                        <Param id="app8_data_encryption_key_path" value="../../../../keys/aes_key_9.bin"/>
                         <Param id="app8_hw_rollback_number" value="10"/>
                         <Param id="app8_hw_rollback_value" value="1"/>
                         <Param id="app8_image_boot_record" value="App_8"/>
@@ -3856,8 +3844,7 @@
                         <Param id="app8_secure_access" value="false"/>
                         <Param id="app8_sig_verify_algo_provisioned" value="ecdsa_p256"/>
                         <Param id="app8_sig_verify_key_id" value="0"/>
-                        <Param id="app8_signature_key_id" value="1"/>
-                        <Param id="app8_signature_priv_key_path" value="../../../../keys/oem_private_key_0.pem"/>
+                        <Param id="app9_data_encryption_key_path" value="../../../../keys/aes_key_10.bin"/>
                         <Param id="app9_hw_rollback_number" value="11"/>
                         <Param id="app9_hw_rollback_value" value="1"/>
                         <Param id="app9_image_boot_record" value="App_9"/>
@@ -3878,8 +3865,6 @@
                         <Param id="app9_secure_access" value="false"/>
                         <Param id="app9_sig_verify_algo_provisioned" value="ecdsa_p256"/>
                         <Param id="app9_sig_verify_key_id" value="0"/>
-                        <Param id="app9_signature_key_id" value="1"/>
-                        <Param id="app9_signature_priv_key_path" value="../../../../keys/oem_private_key_0.pem"/>
                         <Param id="bootloader_device" value="INTERNAL_RRAM"/>
                         <Param id="bootloader_hw_rollback_value" value="1"/>
                         <Param id="bootloader_image_boot_record" value="proj_bldr"/>
@@ -3889,7 +3874,6 @@
                         <Param id="bootloader_output_hex_path" value="../../../../build/project_hex/proj_bootloader_signed.hex"/>
                         <Param id="bootloader_project_name" value="proj_bootloader"/>
                         <Param id="bootloader_signature_enable" value="false"/>
-                        <Param id="bootloader_signature_priv_key_path" value="../../../../keys/oem_private_key_0.pem"/>
                         <Param id="bootloader_sram_code_region_MEMORY_PLACED" value="false"/>
                         <Param id="bootloader_sram_region_MEMORY_PLACED" value="false"/>
                         <Param id="built_in_keys" value="true"/>
@@ -3899,7 +3883,7 @@
                         <Param id="hw_rollback_protection" value="false"/>
                         <Param id="image_count" value="3"/>
                         <Param id="image_encryption" value="off"/>
-                        <Param id="key_encryption_key_address" value="0x3203A000"/>
+                        <Param id="key_encryption_key_id" value="25"/>
                         <Param id="key_encryption_key_path" value="../../../../keys/enc-ec256-pub.pem"/>
                         <Param id="logging_level" value="dbg"/>
                         <Param id="max_boot_record_size" value="0x200"/>
@@ -3909,14 +3893,15 @@
                         <Param id="measured_boot" value="false"/>
                         <Param id="measured_boot_record_region" value=""/>
                         <Param id="nonce_output_file_path" value="../../../../keys/nonce.bin"/>
+                        <Param id="oem_private_key_path" value="../../../../keys/oem_private_key_0.pem"/>
                         <Param id="reserved_memory_region_its#cores" value="CORE_NAME_CM33_0_S"/>
                         <Param id="reserved_memory_region_its#memory" value="RRAM"/>
                         <Param id="reserved_memory_region_its#offset" value="0x00011000"/>
                         <Param id="reserved_memory_region_its#reserved_memory_region_its" value="AUTOPLACEDvres[0].reserved_memory_region[0]"/>
                         <Param id="reserved_memory_region_its#size" value="0x00028000"/>
                         <Param id="scratch_region" value=""/>
-                        <Param id="se_ram_app_staging_address" value="0x70400000"/>
-                        <Param id="se_ram_app_staging_size" value="0x40000"/>
+                        <Param id="se_ram_app_staging_ram_address" value="0x34002000"/>
+                        <Param id="se_ram_app_staging_region" value=""/>
                         <Param id="stage_se_ram_app" value="false"/>
                         <Param id="sw_downgrade_prevention" value="false"/>
                         <Param id="swap_status_region" value=""/>
@@ -4567,10 +4552,6 @@
                     <Port name="scb[10].tr_tx_req[0]"/>
                 </Net>
                 <Net>
-                    <Port name="pass[0].clk_hf[0]"/>
-                    <Port name="srss[0].clock[0].hfclk[9].root_clk[0]"/>
-                </Net>
-                <Net>
                     <Port name="pdm[0].clk_if_srss[0]"/>
                     <Port name="peri[1].group[1].div_16_5[1].clk[0]"/>
                 </Net>
@@ -4619,6 +4600,10 @@
                     <Port name="scb[1].clock_scb_en[0]"/>
                 </Net>
                 <Net>
+                    <Port name="peri[0].group[9].div_8[0].clk_pclk_root[0]"/>
+                    <Port name="srss[0].clock[0].hfclk[13].root_clk[0]"/>
+                </Net>
+                <Net>
                     <Port name="peri[1].group[1].div_16_5[0].clk[0]"/>
                     <Port name="tdm[0].tdm[0].clk_if_srss[0]"/>
                 </Net>
@@ -4627,8 +4612,16 @@
                     <Port name="sdhc[0].clk_hf[0]"/>
                 </Net>
                 <Net>
+                    <Port name="peri[1].group[2].div_8[0].clk_pclk_root[0]"/>
+                    <Port name="srss[0].clock[0].hfclk[5].root_clk[0]"/>
+                </Net>
+                <Net>
                     <Port name="peri[1].group[3].div_8[0].clk[0]"/>
                     <Port name="sdhc[1].clk_hf[0]"/>
+                </Net>
+                <Net>
+                    <Port name="peri[1].group[3].div_8[0].clk_pclk_root[0]"/>
+                    <Port name="srss[0].clock[0].hfclk[6].root_clk[0]"/>
                 </Net>
                 <Net>
                     <Port name="smif[0].core[0].clk_pll_normal[0]"/>
@@ -4639,12 +4632,54 @@
                     <Port name="srss[0].clock[0].hfclk[4].root_clk[0]"/>
                 </Net>
                 <Net>
+                    <Port name="srss[0].clock[0].hfclk[8].root_clk[0]"/>
+                    <Port name="usbhs[0].clk_phy_pll_ref[0]"/>
+                </Net>
+                <Net>
+                    <Port name="pass[0].clk_hf[0]"/>
+                    <Port name="peri[0].mmio[0].clk_pclk_root[5]"/>
+                    <Port name="srss[0].clock[0].hfclk[9].root_clk[0]"/>
+                </Net>
+                <Net>
+                    <Port name="peri[0].group[8].div_16[0].clk_pclk_root[0]"/>
+                    <Port name="peri[0].mmio[0].clk_pclk_root[3]"/>
+                    <Port name="srss[0].clock[0].hfclk[11].root_clk[0]"/>
+                </Net>
+                <Net>
+                    <Port name="peri[1].group[1].div_16_5[0].clk_pclk_root[0]"/>
+                    <Port name="peri[1].group[1].div_16_5[1].clk_pclk_root[0]"/>
+                    <Port name="srss[0].clock[0].hfclk[7].root_clk[0]"/>
+                </Net>
+                <Net>
+                    <Port name="peri[0].group[7].div_16_5[0].clk_pclk_root[0]"/>
+                    <Port name="peri[0].mmio[0].clk_pclk_root[0]"/>
+                    <Port name="peri[0].mmio[0].clk_pclk_root[2]"/>
+                    <Port name="peri[0].mmio[0].clk_pclk_root[4]"/>
+                    <Port name="srss[0].clock[0].hfclk[0].root_clk[0]"/>
+                </Net>
+                <Net>
+                    <Port name="peri[1].mmio[0].clk_pclk_root[0]"/>
+                    <Port name="peri[1].mmio[0].clk_pclk_root[1]"/>
+                    <Port name="peri[1].mmio[0].clk_pclk_root[2]"/>
+                    <Port name="peri[1].mmio[0].clk_pclk_root[3]"/>
+                    <Port name="peri[1].mmio[0].clk_pclk_root[4]"/>
                     <Port name="srss[0].clock[0].hfclk[1].root_clk[0]"/>
                     <Port name="usbhs[0].mmio_clk_hf[0]"/>
                 </Net>
                 <Net>
-                    <Port name="srss[0].clock[0].hfclk[8].root_clk[0]"/>
-                    <Port name="usbhs[0].clk_phy_pll_ref[0]"/>
+                    <Port name="peri[0].group[1].div_16[0].clk_pclk_root[0]"/>
+                    <Port name="peri[0].group[1].div_16[1].clk_pclk_root[0]"/>
+                    <Port name="peri[0].group[1].div_16[2].clk_pclk_root[0]"/>
+                    <Port name="peri[0].group[1].div_16[3].clk_pclk_root[0]"/>
+                    <Port name="peri[0].group[1].div_16_5[0].clk_pclk_root[0]"/>
+                    <Port name="peri[0].group[1].div_16_5[1].clk_pclk_root[0]"/>
+                    <Port name="peri[0].group[1].div_24_5[0].clk_pclk_root[0]"/>
+                    <Port name="peri[0].group[1].div_8[0].clk_pclk_root[0]"/>
+                    <Port name="peri[0].group[1].div_8[1].clk_pclk_root[0]"/>
+                    <Port name="peri[0].group[1].div_8[2].clk_pclk_root[0]"/>
+                    <Port name="peri[0].group[1].div_8[3].clk_pclk_root[0]"/>
+                    <Port name="peri[0].mmio[0].clk_pclk_root[1]"/>
+                    <Port name="srss[0].clock[0].hfclk[10].root_clk[0]"/>
                 </Net>
             </Netlist>
         </Device>
