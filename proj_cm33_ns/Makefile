@@ -57,6 +57,8 @@ COMPONENTS+= DFU_I2C DFU_EMUSB_CDC DFU_EMUSB_HID USBD_BASE
 
 # Like COMPONENTS, but disable optional code that was enabled by default.
 DISABLE_COMPONENTS+=DFU_USER
+DISABLE_COMPONENTS+=MW_IFX_MCUBOOT_PSE84
+DISABLE_COMPONENTS+= MW_WOLFSSL
 
 CORE=CM33
 CORE_NAME=CM33_0
@@ -132,7 +134,9 @@ PREBUILD+=
 
 #Custom post-build commands to run.
 
-
+#Ignore MCUboot files, they are not needed for this project.
+MCUBOOT_ROOT = $(SEARCH_ifx-mcuboot-pse84)
+CY_IGNORE += $(MCUBOOT_ROOT)
 ################################################################################
 # Paths
 ################################################################################

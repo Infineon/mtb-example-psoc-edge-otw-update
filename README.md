@@ -1,6 +1,6 @@
 # PSOC&trade; Edge MCU: OTW(Over-the-Wire) Device Firmware Update
 
-This code example demonstrates how to utilize Infineon's Device Firmware Update (DFU) middleware (MW) to update firmware over a serial interface (over-the-wire (OTW)), such as UART, SPI, I2C, or USB. 
+This code example demonstrates how to utilize Infineon's Device Firmware Update (DFU) middleware (MW) to update firmware over a serial interface (over-the-wire (OTW)), such as UART, SPI, I2C, or USB.
 
 The host (typically a PC) running the DFU Host Tool establishes a connection with the target device and downloads an application intended for the update. Images are downloaded to the staging region in non-volatile memory. Once downloaded successfully, the application resets the device to transfer the control to the bootloader. On reset, the bootloader validates the images in the staging region and installs it in the primary bootable region.
 
@@ -14,14 +14,14 @@ Extended boot launches the Edge Protect bootloader present in RRAM from a fixed 
 
 [View this README on GitHub.](https://github.com/Infineon/mtb-example-psoc-edge-otw-update)
 
-[Provide feedback on this code example.](https://yourvoice.infineon.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzk0ODgiLCJTcGVjIE51bWJlciI6IjAwMi0zOTQ4OCIsIkRvYyBUaXRsZSI6IlBTT0MmdHJhZGU7IEVkZ2UgTUNVOiBPVFcoT3Zlci10aGUtV2lyZSkgRGV2aWNlIEZpcm13YXJlIFVwZGF0ZSIsInJpZCI6Im1hbmFuLmphaW5AaW5maW5lb24uY29tIiwiRG9jIHZlcnNpb24iOiIyLjIuMCIsIkRvYyBMYW5ndWFnZSI6IkVuZ2xpc2giLCJEb2MgRGl2aXNpb24iOiJNQ0QiLCJEb2MgQlUiOiJJQ1ciLCJEb2MgRmFtaWx5IjoiUFNPQyJ9)
+[Provide feedback on this code example.](https://yourvoice.infineon.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzk0ODgiLCJTcGVjIE51bWJlciI6IjAwMi0zOTQ4OCIsIkRvYyBUaXRsZSI6IlBTT0MmdHJhZGU7IEVkZ2UgTUNVOiBPVFcoT3Zlci10aGUtV2lyZSkgRGV2aWNlIEZpcm13YXJlIFVwZGF0ZSIsInJpZCI6InZpbmF5LnJhbmdhc3dhbXlAaW5maW5lb24uY29tIiwiRG9jIHZlcnNpb24iOiIyLjMuMCIsIkRvYyBMYW5ndWFnZSI6IkVuZ2xpc2giLCJEb2MgRGl2aXNpb24iOiJNQ0QiLCJEb2MgQlUiOiJJQ1ciLCJEb2MgRmFtaWx5IjoiUFNPQyJ9)
 
 See the [Design and implementation](docs/design_and_implementation.md) for the functional description of this example.
 
 
 ## Requirements
 
-- [ModusToolbox&trade;](https://www.infineon.com/modustoolbox) v3.7 or later (tested with v3.7)
+- [ModusToolbox&trade;](https://www.infineon.com/modustoolbox) v3.7 or later (tested with v3.9)
 - Board support package (BSP) minimum required version: 1.0.0
 - Programming language: C
 - Associated parts: All [PSOC&trade; Edge MCU](https://www.infineon.com/products/microcontroller/32-bit-psoc-arm-cortex/32-bit-psoc-edge-arm) parts
@@ -31,8 +31,8 @@ See the [Design and implementation](docs/design_and_implementation.md) for the f
 
 - GNU Arm&reg; Embedded Compiler v14.2.1 (`GCC_ARM`) – Default value of `TOOLCHAIN`
 - Arm&reg; Compiler v6.22 (`ARM`)
-- IAR C/C++ Compiler v9.50.2 (`IAR`)
-- LLVM Embedded Toolchain for Arm&reg; v19.1.5 (`LLVM_ARM`)
+- IAR C/C++ Compiler v9.70.4 (`IAR`)
+- Arm&reg; Toolchain for Embedded v22.1 (`LLVM_ARM`)
 
 
 ## Supported kits (make variable 'TARGET')
@@ -161,10 +161,10 @@ See [Using the code example](docs/using_the_code_example.md) for instructions on
 ### Prepare for firmware update
 
 8. Build the firmware update image to be transfered to the device to perform the firmware update:
-    
-    1. Change the `IMG_TYPE?=BOOT` variable to `IMG_TYPE?=UPDATE` in the *common.mk* in the the application root folder 
+
+    1. Change the `IMG_TYPE?=BOOT` variable to `IMG_TYPE?=UPDATE` in the *common.mk* in the the application root folder
     2. Rebuild the complete project
-    
+
     > **Note:** Do not program this image using KitProg3
 
 9. Select the DFU transport interface on the device by pressing **USER BTN1** until your desired DFU transport interface is selected. See **Figure 5** and check out [Switching DFU Transport Interface](docs/design_and_implementation.md#switching-the-dfu-transport-interface) to understand how this works
@@ -174,13 +174,13 @@ See [Using the code example](docs/using_the_code_example.md) for instructions on
     **Figure 5. Terminal output on DFU transport switch**
 
     ![](images/dfu_switch_output.png)
-    
+
 ### Perform firmware update
 
 10. Download the update image to the device and launch the EdgeProtect bootloader to perform the firmware update.
 
     1. *mdbdfu* file having the right command sequence to transfer the update image is provided here - **`<Workspace>/<CodeExampleName>`/Program.mtbdfu**. Open the file and update the `dataFile` field in "commands" section with absolute path of the project hex file **`<Workspace>/<CodeExampleName>`/build/app_combined.hex**
-    
+
     2. Ensure instructions in [**Hardware Setup**](#hardware-setup) section are followed and connect the MiniProg4 USB to the host PC (for I2C DFU transport)
 
     3. Download the firmware using either the DFU Host Tool GUI or CLI
@@ -205,7 +205,7 @@ See [Using the code example](docs/using_the_code_example.md) for instructions on
         2. Execute the following DFU CLI command from the Host Tool directory in the shell terminal:
 
             ```
-            dfuh-cli.exe --custom-command path-to-mtbdfu-file --hwid Probe-id/COM Port  --interface-params 
+            dfuh-cli.exe --custom-command path-to-mtbdfu-file --hwid Probe-id/COM Port  --interface-params
             ```
 
             For example, to use I2C interface, use:
@@ -221,7 +221,7 @@ See [Using the code example](docs/using_the_code_example.md) for instructions on
         </details>
 
         > **Note:** See [DFU Host Tool for ModusToolbox&trade; User Guide](https://www.infineon.com/ModusToolboxDFUHostTool) for more details on each of the interfaces
-      
+
     4. After succesful download of the update image to the device, application triggers a system reset to launch the EdgeProtect bootloader for performing the update
 
         **Figure 8. Terminal output of image update**
@@ -265,6 +265,7 @@ Document title: *CE239488* – *PSOC&trade; Edge MCU: OTW Device Firmware Update
  2.0.1   | Updated .gitignore file
  2.1.0   | Added support for KIT_PSE84_AI
  2.2.0   | Updated design files to fix ModusToolbox&trade; v3.7 build warnings
+ 2.3.0   | Updated Makefile to improve functionality
 <br>
 
 
